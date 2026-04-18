@@ -2,8 +2,7 @@ import KpiCard from "@/components/dashboard/KpiCard";
 
 export default function DashboardPage() {
   return (
-    <main className="p-8 space-y-8 bg-[#0a0f14] min-h-screen text-white">
-      <h1 className="text-3xl font-bold">GitHub Dashboard</h1>
+    <div className="space-y-8">
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <KpiCard
@@ -27,6 +26,7 @@ export default function DashboardPage() {
           variant="tertiary"
         />
       </section>
-    </main>
+
+    </div>
   );
 }
