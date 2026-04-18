@@ -1,15 +1,20 @@
+"use client";
+
+import DashboardPreview from "@/components/dashboard/DashboardPreview";
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <main className="bg-[#0a0f14] text-white">
 
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-[#0a0f14]/80 backdrop-blur-lg px-6 py-4 flex justify-between">
-        <h1 className="text-[#69daff] font-bold text-xl">SYNTHCORE</h1>
+        <h1 className="text-[#69daff] font-bold text-xl">CeroUno: Soluciones Digitales</h1>
 
         <div className="hidden md:flex gap-6 text-sm text-gray-400">
           <a href="#about">About</a>
           <a href="#stack">Stack</a>
-          <a href="/dashboard" className="text-[#69daff]">
+          <a href="/dashboard" className="text-[#69daff] font-semibold">
             Dashboard
           </a>
         </div>
@@ -21,20 +26,31 @@ export default function Home() {
 
           {/* TEXTO */}
           <div className="space-y-6">
-            <h1 className="text-6xl font-bold leading-tight">
+
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-6xl font-bold leading-tight"
+            >
               Fernando Gómez <br />
               <span className="text-[#69daff]">Command Your Code</span>
-            </h1>
+            </motion.h1>
 
             <p className="text-gray-400 max-w-md">
               GitHub analytics dashboard that visualizes repositories,
               activity, technologies and performance in real time.
             </p>
 
-            <div className="flex gap-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="flex gap-4"
+            >
               <a
                 href="/dashboard"
-                className="bg-[#69daff] text-black px-6 py-3 rounded font-semibold"
+                className="bg-[#69daff] text-black px-6 py-3 rounded font-semibold hover:brightness-110 transition"
               >
                 View Dashboard
               </a>
@@ -42,26 +58,16 @@ export default function Home() {
               <a
                 href="https://github.com/viperold"
                 target="_blank"
-                className="border border-white/10 px-6 py-3 rounded"
+                className="border border-white/10 px-6 py-3 rounded hover:bg-white/5 transition"
               >
                 GitHub
               </a>
-            </div>
+            </motion.div>
+
           </div>
 
-          {/* PREVIEW */}
-          <div className="bg-[#141a20] rounded-xl border border-white/5 p-6">
-            <p className="text-sm text-gray-400 mb-4">
-              Dashboard Preview
-            </p>
-
-            <div className="h-48 bg-[#1f262e] rounded flex items-end gap-1 p-4">
-              <div className="flex-1 bg-[#69daff]/40 h-1/3"></div>
-              <div className="flex-1 bg-[#69daff] h-2/3"></div>
-              <div className="flex-1 bg-[#69daff]/60 h-full"></div>
-              <div className="flex-1 bg-[#69daff]/30 h-1/2"></div>
-            </div>
-          </div>
+          {/* PREVIEW REAL */}
+          <DashboardPreview />
 
         </div>
       </section>
@@ -88,10 +94,8 @@ export default function Home() {
             </h3>
 
             <ul className="space-y-2 text-gray-400">
-              <li>• Fullstack Development</li>
-              <li>• AI & Data</li>
-              <li>• Cybersecurity</li>
-              <li>• Cloud Systems</li>
+              <li>• Mobile app developer</li>
+              <li>• Fullstack Developer</li>
             </ul>
           </div>
 
@@ -112,7 +116,7 @@ export default function Home() {
               (tech) => (
                 <div
                   key={tech}
-                  className="p-6 bg-[#141a20] border border-white/5 rounded"
+                  className="p-6 bg-[#141a20] border border-white/5 rounded hover:border-[#69daff]/40 transition"
                 >
                   {tech}
                 </div>

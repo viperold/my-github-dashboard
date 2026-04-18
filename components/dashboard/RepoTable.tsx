@@ -13,18 +13,32 @@ type Repo = {
 export default function RepoTable() {
   const [repos, setRepos] = useState<Repo[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("/api/github")
-      .then((res) => res.json())
-      .then((data) => {
-        setRepos(data);
-        setLoading(false);
-      });
+  fetch("/api/github")
+    .then((res) => {
+      if (!res.ok) throw new Error();
+      return res.json();
+    })
+    .then((data) => {
+      setRepos(data);
+      setLoading(false);
+    })
+    .catch(() => {
+      setError(true);
+      setLoading(false);
+    });
   }, []);
 
-  if (loading) {
+
+
+    if (loading) {
     return <p className="text-gray-400">Cargando repos...</p>;
+  }
+
+  if (error) {
+    return <p className="text-red-400">Error cargando repos</p>;
   }
 
   return (

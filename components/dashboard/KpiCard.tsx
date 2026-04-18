@@ -18,7 +18,7 @@ export default function KpiCard({
   };
 
   return (
-    <div className="bg-[#141a20] p-8 rounded-xl border border-white/5 relative overflow-hidden group">
+    <div className="bg-[#141a20] p-8 rounded-xl border border-white/5 relative overflow-hidden group hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(105,218,255,0.1)] transition">
       
       {/* Icon background */}
       <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
