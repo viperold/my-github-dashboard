@@ -1,31 +1,68 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import KpiCard from "@/components/dashboard/KpiCard";
+import ActivityChart from "@/components/charts/ActivityChart";
+
+type Repo = {
+  id: number;
+  stargazers_count: number;
+  language: string | null;
+  updated_at: string;
+};
+
+type Metrics = {
+  totalRepos: number;
+  totalStars: number;
+  topLanguage: string;
+};
 
 export default function DashboardPage() {
+  const [metrics, setMetrics] = useState<Metrics | null>(null);
+  const [repos, setRepos] = useState<Repo[]>([]);
+
+  useEffect(() => {
+    fetch("/api/metrics")
+      .then((res) => res.json())
+      .then((data) => setMetrics(data));
+
+    fetch("/api/github")
+      .then((res) => res.json())
+      .then((data) => setRepos(data));
+  }, []);
+
+  if (!metrics) {
+    return <p className="text-gray-400">Cargando...</p>;
+  }
+
   return (
     <div className="space-y-8">
 
+      {/* KPIs */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <KpiCard
           title="Total Repositories"
-          value={42}
-          subtitle="+3 este mes"
-          variant="primary"
+          value={metrics.totalRepos}
+          subtitle="repos públicos"
         />
 
         <KpiCard
-          title="Activity"
-          value={128}
-          subtitle="últimos 30 días"
+          title="Total Stars"
+          value={metrics.totalStars}
+          subtitle="acumuladas"
           variant="secondary"
         />
 
         <KpiCard
-          title="System Core"
-          value="Operational"
-          subtitle="All systems running"
+          title="Top Language"
+          value={metrics.topLanguage}
+          subtitle="más usado"
           variant="tertiary"
         />
       </section>
+
+      {/* Chart */}
+      <ActivityChart repos={repos} />
 
     </div>
   );
