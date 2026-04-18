@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import KpiCard from "@/components/dashboard/KpiCard";
 import ActivityChart from "@/components/charts/ActivityChart";
+import LanguagesChart from "@/components/charts/LanguagesChart";
 
 type Repo = {
   id: number;
@@ -63,6 +64,7 @@ export default function DashboardPage() {
 
       {/* Chart */}
       <ActivityChart repos={repos} />
+      <LanguagesChart repos={repos} />
 
     </div>
   );
