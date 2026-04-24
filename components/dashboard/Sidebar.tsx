@@ -27,14 +27,6 @@ export default function Sidebar() {
         <Link href="/dashboard/repos" className={linkClass("/dashboard/repos")}>
           Repositories
         </Link>
-
-        <Link href="#" className="block text-gray-400">
-          Pull Requests
-        </Link>
-
-        <Link href="#" className="block text-gray-400">
-          Issues
-        </Link>
       </nav>
     </aside>
   );

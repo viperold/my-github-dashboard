@@ -24,15 +24,11 @@ const services = [
     icon: "📊",
   },
   {
-    title: "Automatización",
-    desc: "Integraciones y flujos automáticos que ahorran tiempo y costos.",
-    icon: "🔄",
+    title: "Mantenimiento & Soporte",
+    desc: "Servicios de mantenimiento preventivo y correctivo para tus sistemas y equipos.",
+    icon: "🛠️",
   },
-  {
-    title: "Cloud & Escalabilidad",
-    desc: "Infraestructura preparada para crecer con tu empresa.",
-    icon: "☁️",
-  },
+  
 ];
 
 export default function Services() {

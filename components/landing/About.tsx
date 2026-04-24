@@ -33,6 +33,7 @@ export default function About() {
             <li>• Arquitectura de software</li>
             <li>• Desarrollo fullstack</li>
             <li>• Sistemas escalables</li>
+            <li>• Mantenimiento & Soporte</li>
           </ul>
         </div>
 
