@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import DashboardPreview from "@/components/dashboard/DashboardPreview";
+import Services from "@/components/landing/Services";
 
 export default function Hero() {
   return (
@@ -25,7 +25,12 @@ export default function Hero() {
 
           <p className="text-gray-400 max-w-md">
             Creamos software a medida, aplicaciones móviles y plataformas web
-            escalables para empresas que buscan crecer con tecnología.
+            escalables para empresas y emprendedores que buscan transformar sus ideas en realidad,
+            y avanzar en el uso de tecnología para mejorar sus procesos y resultados.
+            Confía en CeroUno para llevar tu proyecto al siguiente nivel con innovación, calidad y compromiso.
+            <br />
+            Además de que puedes contar con servicio de mantenimiento preventivo y correctivo para computadoras, 
+            revisamos los equipos.
           </p>
 
           <motion.div
@@ -52,7 +57,13 @@ export default function Hero() {
         </div>
 
         {/* PREVIEW */}
-        <DashboardPreview />
+        <div className="bg-[#141a20]/60 p-6 rounded-xl border border-white/5 backdrop-blur-md">
+          <p className="text-sm text-gray-400 mb-4">
+            Qué podemos construir para ti
+          </p>
+
+          <Services />
+        </div>
 
       </div>
     </section>

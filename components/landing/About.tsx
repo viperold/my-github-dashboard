@@ -9,9 +9,12 @@ export default function About() {
           </h2>
 
           <p className="text-gray-400 leading-relaxed">
-            Soy Fernando Gómez, desarrollador fullstack enfocado en la creación
-            de sistemas escalables, visualización de datos y soluciones digitales
-            modernas.
+            Soy Fernando Gómez, estudiante de Ingeniería en Informatica de Inacap Valdivia, con una pasión por la tecnología 
+            y el desarrollo de software. Aumentando mi experiencia en el desarrollo de aplicaciones móviles y arquitectruas de
+            software, además del desarrollo de webs, y con un fuerte enfoque en la creación de sistemas escalables.
+            Desde joven, me ha fascinado cómo la tecnología puede transformar ideas en soluciones tangibles, lo que me llevó a 
+            crear CeroUno.
+            
           </p>
 
           <p className="text-gray-400 mt-4 leading-relaxed">
